@@ -31,27 +31,40 @@ body {
 	top: 0;
 	right: 0;
 }
-.nav-links .animated-link-wrapper {
+
+.nav-links li {
 	position: relative;
-}
-.nav-links .animated-link-wrapper a {
 	color: aliceblue;
-	font-size: 2rem;
 }
-.nav-links .animated-link-wrapper a::after {
+.nav-links li a {
+	position: relative;
+	z-index: 1;
+	font-size: 15px;
+}
+.nav-links li::before {
 	background-color: currentColor;
 	content: "";
 	position: absolute;
-	width: 100%;
-	height: 2px;
+	margin: auto;
+	width: 0;
+	height: 0;
 	bottom: 0;
+	right: 0;
+	top: 0;
 	left: 0;
-	transform: scaleX(0);
+	border-radius: 10px;
+	opacity: 0.25;
+	/* transform: scaleX(0); */
 	/* transform-origin: bottom; */
-	transition: transform 0.2s ease-in;
+	/* transition: transform 0.2s ease-in; */
 }
-.nav-links .animated-link-wrapper a:hover::after {
-	transform: scaleX(1);
+.nav-links li:hover::before,
+.nav-links li.active::before {
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+
+	/* transform: scaleX(1); */
 	/* transform-origin: top; */
 }
 /* Start purging... */
